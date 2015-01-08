@@ -1,0 +1,32 @@
+{
+  "name": "xtract",
+  "version": "0.0.1",
+  "description": "Extract data from DOM, easily.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/f/xtract"
+  },
+  "keywords": [
+    "dom",
+    "data",
+    "model",
+    "extract"
+  ],
+  "author": "fkadev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/f/xtract/issues"
+  },
+  "homepage": "https://github.com/f/xtract",
+  "dependencies": {
+    "jquery": "^2.1.3"
+  },
+  "devDependencies": {
+    "jquery": "^2.1.3",
+    "jsdom": "^2.0.0"
+  }
+}
