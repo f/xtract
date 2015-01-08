@@ -17,7 +17,8 @@ and **Xtract** helps you to do that.
 
 ```html
 <p id="profile">
-  My name is <span data-x="user.name">Fatih</span>, and I'm from <span data-x="user.location">Istanbul</span>.
+  My name is <span data-x="user.name">Fatih</span>,
+  and I'm from <span data-x="user.location">Istanbul</span>.
 </p>
 ```
 
@@ -39,7 +40,11 @@ This will generate following object:
 
 ```html
 <p id="profile">
-  My name is <span data-x="user.name.firstname">Fatih</span> <span data-x="user.name.lastname">Akın</span>, and I'm from <span data-x="user.location.city">Istanbul</span>, <span data-x="user.location.country.name">Turkey (<span data-x="user.location.country.code">TR</span>)</span>.
+  My name is <span data-x="user.name.firstname">Fatih</span>
+  <span data-x="user.name.lastname">Akın</span>,
+  and I'm from <span data-x="user.location.city">Istanbul</span>,
+  <span data-x="user.location.country.name">Turkey
+  (<span data-x="user.location.country.code">TR</span>)</span>.
 </p>
 ```
 
@@ -72,8 +77,9 @@ You can use `$this` in `data-x` attribute to reach more values.
 
 ```html
 <p id="profile">
-<img src="my-profile-picture.jpg" data-x="user.image: $this.attr('src')">
-My name is <span data-x="user.name">Fatih</span>, and I'm from <span data-x="user.location">Istanbul</span>.
+  <img src="my-profile-picture.jpg" data-x="user.image: $this.attr('src')">
+  My name is <span data-x="user.name">Fatih</span>,
+  and I'm from <span data-x="user.location">Istanbul</span>.
 </p>
 ```
 
