@@ -31,8 +31,10 @@ xtract($("#profile")).$model
 This will generate following object:
 ```js
 {
-  user: "Fatih",
-  location: "Istanbul"
+  user: {
+    name: "Fatih",
+    location: "Istanbul"
+  }
 }
 ```
 
@@ -90,9 +92,11 @@ xtract($("#profile")).$model
 This will map the `src` tag to the `user.image`:
 ```js
 {
-  user: "Fatih",
-  location: "Istanbul",
-  image: "my-profile-picture.jpg"
+  user: {
+    name: "Fatih",
+    location: "Istanbul",
+    image: "my-profile-picture.jpg"
+  }
 }
 ```
 
