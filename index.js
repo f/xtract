@@ -50,7 +50,8 @@ function xtract(data) {
   return new Xtract(data);
 }
 
-if (module && module.exports) {
+var module = module || {}
+if (module.exports) {
   module.exports = xtract;
 } else if (window) {
   window.xtract = xtract;
