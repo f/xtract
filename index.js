@@ -14,14 +14,14 @@ function Xtract(element) {
 }
 
 Xtract.prototype.generatePath = function(obj, path, value) {
-    var keys = path.split('.');
-    var last = keys[keys.length - 1];
+  var keys = path.split('.');
+  var last = keys[keys.length - 1];
 
-    keys.forEach(function(key, index) {
-      var val = key === last ? value : {};
-      obj[key] = val;
-      obj = obj[key];
-    });
+  keys.forEach(function(key, index) {
+    var val = key === last ? value : {};
+    obj[key] = val;
+    obj = obj[key];
+  });
 };
 
 Xtract.prototype.evaluate = function (expr, $this) {
