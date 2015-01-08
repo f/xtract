@@ -8,7 +8,7 @@ npm install xtract
 
 ## Requirements
 
-  - This works on browser, not Node. But if you use *jsdom*, you can.
+  - This works on browser, not node.js. But if you use *jsdom*, you can.
   - Requires jQuery.
 
 SEO is the main problem of modern web. And we have problems with passing the data from
