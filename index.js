@@ -1,5 +1,6 @@
 function Xtract(element) {
   var self = this;
+  var data = {};
   this.$model = {};
   this.elements = this.getElements(element);
   this.elements.each(function () {
@@ -7,20 +8,20 @@ function Xtract(element) {
     var pair = $el.data('x').split(/\:/);
     var keyPath = pair.shift();
     var value = self.evaluate(pair.join(':'), $el);
-    $.extend(true, self.$model, self.generatePath(keyPath, value));
+    self.generatePath(data, keyPath, value);
+    $.extend(true, self.$model, data);
   });
 }
 
-Xtract.prototype.generatePath = function (path, value) {
-  var data = {};
-  var route = [];
-  var keys = path.split('.');
-  for (var i in keys) {
-    route.push(keys[i]);
-    eval('data.' + route.join('.') + ' = {}');
-  }
-  eval('data.' + route.join('.') + ' = value');
-  return data;
+Xtract.prototype.generatePath = function(obj, path, value) {
+    var keys = path.split('.');
+    var last = keys[keys.length - 1];
+
+    keys.forEach(function(key, index) {
+      var val = key === last ? value : {};
+      obj[key] = val;
+      obj = obj[key];
+    });
 };
 
 Xtract.prototype.evaluate = function (expr, $this) {
