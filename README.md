@@ -4,6 +4,7 @@ Extract data from DOM, easily. Useful for back-end generated contents and **SEO-
 
 ![Image](https://raw.githubusercontent.com/f/xtract/master/test/xtract.png)
 
+## Installation
 ```
 npm install xtract
 ```
