@@ -2,6 +2,8 @@
 
 Extract data from DOM, easily. Useful for back-end generated contents and **SEO-friendly** rich apps.
 
+![./test/xtract.png](Example)
+
 ```
 npm install xtract
 ```
@@ -98,6 +100,32 @@ This will map the `src` tag to the `user.image`:
     image: "my-profile-picture.jpg"
   }
 }
+```
+
+## Plug-ins
+
+You can simply write plugins to use extract easier.
+
+```js
+xtract.plug('date', function () {
+  return $(this).text().replace(/(\d+)\s+(\w+)\s+(\d+)/, '$3, $1 $2');
+});
+```
+
+The static HTML:
+```html
+<div>
+  Einstein: <span data-x="date.birth: $this.date()">14 March 1879</span> –
+  <span data-x="date.death: $this.date()">18 April 1955</span>
+</div>
+```
+
+Output:
+```js
+date: {
+  birth: "1879, 14 March",
+  death: "1955, 18 April"
+},
 ```
 
 ## License

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body data-x="scientist.works: $this.collect('.work', 'text')">
+  <span data-x="scientist.name">Albert</span> <span data-x="scientist.surname">Einstein</span>
+  <span data-x="misc.ipa">(/ˈælbərt ˈaɪnstaɪn/; <span data-x="scientist.nationality">German</span>:
+  [ˈalbɐrt ˈaɪnʃtaɪn]; <span data-x="scientist.date.birth: $this.date()">14 March 1879</span> –
+  <span data-x="scientist.date.death: $this.date()">18 April 1955</span>)</span> was a German-born
+  <span data-x="scientist.job">theoretical physicist and philosopher of science.</span>
+  [3] He <span class="work">developed the general theory of relativity</span>, one
+  of the two pillars of modern physics (alongside quantum mechanics).[2][4] He
+  is <span class="work">best known in popular culture for his mass–energy equivalence formula
+  E = mc2</span> (which has been dubbed "the world's most famous equation").[5] He
+  <span class="work">received the 1921 Nobel Prize in Physics</span> "for his services to theoretical
+  physics, and especially for his discovery of the law of the photoelectric
+  effect.[6] The latter was pivotal in establishing quantum theory.
+
+  <hr>
+  <pre id="data"></pre>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="../index.js"></script>
+  <script charset="utf-8">
+    xtract.plug('date', function () {
+      return $(this).text().replace(/(\d+)\s+(\w+)\s+(\d+)/, '$3, $1 $2');
+    });
+    $('#data').html(JSON.stringify(xtract($('body')).$model, null, '  '))
+  </script>
+</body>
+</html>
