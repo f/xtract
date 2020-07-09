@@ -23,10 +23,10 @@
   },
   "homepage": "https://github.com/f/xtract",
   "dependencies": {
-    "jquery": "^2.1.3"
+    "jquery": "^3.5.1"
   },
   "devDependencies": {
-    "jquery": "^2.1.3",
+    "jquery": "^3.5.1",
     "jsdom": "^2.0.0"
   }
 }
